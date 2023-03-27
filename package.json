@@ -1,0 +1,17 @@
+{
+  "name": "console-project",
+  "version": "0.0.1",
+  "description": "technical test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Edgar Pérez-Figueroa",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.1.5",
+    "uuid": "^9.0.0"
+  }
+}
