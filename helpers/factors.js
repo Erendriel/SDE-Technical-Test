@@ -10,7 +10,6 @@ export const getFactor = (x) => {
 
 export const sameFactors = (shipment = [], driver = []) => {
   let sameCommonFactor = [];
-  // console.log("shipment commonFactors", shipment);
 
   shipment.forEach((destination_factor, index) => {
     const sharedCommonFactors = driver.find(

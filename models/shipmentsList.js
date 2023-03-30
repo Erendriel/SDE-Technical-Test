@@ -19,7 +19,8 @@ class ShipmentsList {
   }
 
   addShipment(name = "", isEven = false, factors = []) {
-    const shipment = new Shipment(name, isEven, factors);
+    const n = name.replace(/[^a-zA-Z0-9 ]/g, "");
+    const shipment = new Shipment(n, isEven, factors);
     this._shipmentList[shipment.id] = shipment;
   }
 
@@ -34,19 +35,20 @@ class ShipmentsList {
     if (this.shipmentListArray.length > 0) {
       this.shipmentListArray.forEach((e, i) => {
         const idx = `${i + 1}`;
-        const { name, isEven, commonFactor } = e;
+        const { name } = e;
         console.log(`${idx}.- name: ${name}`);
       });
+    } else {
+      console.log("\nPlease upload a Shipment file\n");
     }
-    console.log("\nPlease upload a Shipment file\n");
   }
 
   loadShipment(item = {}) {
     item.shipments.forEach((destination) => {
       const factors = getFactor(destination.length);
       if (destination.length % 2 === 0) {
-        this.addShipment(destination, true, factors);
-      } else this.addShipment(destination, false, factors);
+        this.addShipment(destination, false, factors);
+      } else this.addShipment(destination, true, factors);
     });
   }
 }

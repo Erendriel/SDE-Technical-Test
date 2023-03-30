@@ -17,7 +17,8 @@ class DriversList {
     this._driversList = {};
   }
   addDriver(name = "", vowels = 0, consonants = 0, factors = []) {
-    const driver = new Driver(name, vowels, consonants, factors);
+    const n = name.replace(/[^a-zA-Z0-9 ]/g, "");
+    const driver = new Driver(n, vowels, consonants, factors);
     this._driversList[driver.id] = driver;
   }
 
@@ -28,14 +29,15 @@ class DriversList {
   }
 
   showDriversList() {
-    if (this.driverslistArray.length != 0) {
+    if (this.driverslistArray.length > 0) {
       this.driverslistArray.forEach((e, i) => {
         const idx = `${i + 1}`;
-        const { name, vowels, consonants, commonFactor } = e;
+        const { name } = e;
         console.log(`${idx}.- name: ${name}`);
       });
+    } else {
+      console.log("\nPlease upload Drivers file \n");
     }
-    console.log('\nPlease upload Drivers file \n')
   }
 
   loadDrivers(item = {}) {
