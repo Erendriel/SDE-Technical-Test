@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const outputFile = "./db/output.json";
+const outputFile = "./output/output.json";
 
 export const saveDB = (data) => {
   fs.writeFileSync(outputFile, JSON.stringify(data));
