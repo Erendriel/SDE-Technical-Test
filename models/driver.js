@@ -15,15 +15,15 @@ class Driver {
         this.commonFactor = commonFactor;
     }
     vowelsAndConsonantsLength = (name = '') => {
-        let vowels = 1;
-        let consonants = 1;
+        let vowels = 0;
+        let consonants = 0;
         let count;
     
         for (count = 0; count <= name.length; count++) {
           let char = name.charAt(count);
-          if (char.match(/[aeiou]/)) {
+          if (char.match(/[aeiouAEIOU]/)) {
             vowels++;
-          } else if (char.match(/[bcdfghjklmnpqrstvwxyz]/)) {
+          } else if (char.match(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/)) {
             consonants++;
           }
         }

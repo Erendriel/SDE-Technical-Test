@@ -64,14 +64,14 @@ class SuitabilityScoreList {
           );
 
           if (_sl[j].isEven) {
-            if (factorResults.length > 1) {
+            if (factorResults.length > 2) {
               suitability = driver.vowels * 1.5 * 1.5;
               suitabilityScores.push(suitability);
             } else {
               suitability = driver.vowels * 1.5;
               suitabilityScores.push(suitability);
             }
-          } else if (factorResults.length > 1) {
+          } else if (factorResults.length > 2) {
             suitability = driver.consonants * 1.5 * 1.5;
             suitabilityScores.push(suitability);
           } else {

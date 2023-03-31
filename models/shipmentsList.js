@@ -47,8 +47,8 @@ class ShipmentsList {
     item.shipments.forEach((destination) => {
       const factors = getFactor(destination.length);
       if (destination.length % 2 === 0) {
-        this.addShipment(destination, false, factors);
-      } else this.addShipment(destination, true, factors);
+        this.addShipment(destination, true, factors);
+      } else this.addShipment(destination, false, factors);
     });
   }
 }
